@@ -285,7 +285,13 @@ RCT_EXPORT_METHOD(getOfflineData:(nonnull NSString *)mac){
                 [mydateFormatter setDateFormat:@"yyyy-MM-dd HH:mm:ss"];
                 NSString *dateStr = [mydateFormatter stringFromDate:tempDate];
                 
-                NSDictionary *dic = [NSDictionary dictionaryWithObjectsAndKeys:dateStr,@"data_measure_time",@(model.value),@"data_value",model.dataID,@"dataID",@(model.timeZone),@"data_measure_timezone",flag,@"data_time_proof", nil];
+                NSDictionary *dic = @{
+                    @"data_measure_time": dateStr,
+                    @"data_value": @(model.value),
+                    @"dataID": model.dataID,
+                    @"data_measure_timezone": @(model.timeZone),
+                    @"data_time_proof": @(flag)
+                };
                 
                 [tempArr addObject:dic];
             }
