@@ -1,7 +1,7 @@
 'use strict';
 
 
-var {NativeModules} = require('react-native');
+var { NativeModules } = require('react-native');
 
 var RCTModule = NativeModules.HS2SModule
 
@@ -26,32 +26,32 @@ module.exports = {
     RCTModule.getBattery(mac)
   },
 
-  setUnit: function (mac,unit) {
-    RCTModule.setUnit(mac,unit)
+  setUnit: function (mac, unit) {
+    RCTModule.setUnit(mac, unit)
   },
 
   getUserInfo: function (mac) {
     RCTModule.getUserInfo(mac)
   },
-  
-  updateUserInfo: function (mac,userID,createTS,weight,age,height,sex,impedanceMark,fitnessMark) {
-    RCTModule.updateUserInfo(mac,userID,createTS,weight,age,height,sex,impedanceMark,fitnessMark);
+
+  updateUserInfo: function (mac, userID, createTS, weight, age, height, sex, impedanceMark, fitnessMark) {
+    RCTModule.updateUserInfo(mac, userID, createTS, weight, age, height, sex, impedanceMark, fitnessMark);
   },
 
-  deleteUser: function (mac,userID) {
-    RCTModule.deleteUser(mac,userID);
+  deleteUser: function (mac, userID) {
+    RCTModule.deleteUser(mac, userID);
   },
 
-  getMemoryDataCount: function (mac,userID) {
-    RCTModule.getMemoryDataCount(mac,userID);
+  getMemoryDataCount: function (mac, userID) {
+    RCTModule.getMemoryDataCount(mac, userID);
   },
 
-  getMemoryData: function (mac,userID) {
-    RCTModule.getMemoryData(mac,userID);
+  getMemoryData: function (mac, userID) {
+    RCTModule.getMemoryData(mac, userID);
   },
 
-  deleteMemoryData: function (mac,userID) {
-    RCTModule.deleteMemoryData(mac,userID);
+  deleteMemoryData: function (mac, userID) {
+    RCTModule.deleteMemoryData(mac, userID);
   },
 
   getAnonymousMemoryDataCount: function (mac) {
@@ -66,8 +66,18 @@ module.exports = {
     RCTModule.deleteAnonymousMemoryData(mac)
   },
 
-  measure: function (mac,userType,userID,createTS,weight,age,height,sex,impedanceMark,fitnessMark) {
-    RCTModule.measure(mac,userType,userID,createTS,weight,age,height,sex,impedanceMark,fitnessMark)
+  measure: function (mac) {
+    //RCT_EXPORT_METHOD(measure:(nonnull NSString*)mac :(nonnull NSNumber*)userType :(nonnull NSString*)userID :(nonnull NSNumber*)createTS :(nonnull NSNumber*)weight :(nonnull NSNumber*)age :(nonnull NSNumber*)height :(nonnull NSNumber*)sex :(nonnull NSNumber*)impedanceMark :(nonnull NSNumber*)fitnessMark){
+    userType = 0
+    userID = ""
+    createTS = 0
+    weight = 0
+    age = 0
+    height = 0
+    sex = 0
+    impedanceMark = 0
+    fitnessMark = 0
+    RCTModule.measure(mac, userType, userID, createTS, weight, age, height, sex, impedanceMark, fitnessMark)
   },
 
   resetDevice: function (mac) {
