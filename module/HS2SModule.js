@@ -68,15 +68,15 @@ module.exports = {
 
   measure: function (mac) {
     //RCT_EXPORT_METHOD(measure:(nonnull NSString*)mac :(nonnull NSNumber*)userType :(nonnull NSString*)userID :(nonnull NSNumber*)createTS :(nonnull NSNumber*)weight :(nonnull NSNumber*)age :(nonnull NSNumber*)height :(nonnull NSNumber*)sex :(nonnull NSNumber*)impedanceMark :(nonnull NSNumber*)fitnessMark){
-    userType = 0
-    userID = ""
-    createTS = 0
-    weight = 0
-    age = 0
-    height = 0
-    sex = 0
-    impedanceMark = 0
-    fitnessMark = 0
+    let userType = 0
+    let userID = ""
+    let createTS = 0
+    let weight = 0
+    let age = 0
+    let height = 0
+    let sex = 0
+    let impedanceMark = 0
+    let fitnessMark = 0
     RCTModule.measure(mac, userType, userID, createTS, weight, age, height, sex, impedanceMark, fitnessMark)
   },
 
